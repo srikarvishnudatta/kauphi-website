@@ -1,4 +1,4 @@
-import { Menu, Search, ShoppingCart, User } from "lucide-react";
+import { Menu, Search, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 
 export default function Navbar() {
@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className="md:hidden flex-1">
           <Menu size={32} />
         </div>
-        <div className="mr-10 flex items-center gap-2">
+        <div className=" flex items-center gap-2">
           <Image
             src={"/GREEN.png"}
             alt="kauphi-logo"
@@ -24,9 +24,7 @@ export default function Navbar() {
           {/* <h2 className="text-3xl">Kauphi</h2> */}
         </div>
         <ul className=" flex flex-1 gap-4 justify-end items-center ">
-          <li>
-            <User />
-          </li>
+
           <li>
             <Search />
           </li>
