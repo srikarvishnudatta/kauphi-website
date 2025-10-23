@@ -1,6 +1,9 @@
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+
 export default function About() {
   return (
-    <section className="py-20 bg-primary ">
+    <section className="py-20 bg-primary h-screen" id="about">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-secondary text-4xl text-center mb-20">Our Journey</h2>
 
@@ -12,6 +15,11 @@ export default function About() {
             illum odit aut doloribus maxime incidunt, voluptate harum. Deserunt
             minima odit similique. Harum.
           </p>
+          <Link href={"/about"}
+          className="flex justify-center items-center gap-3 bg-secondary font-bold text-primary rounded-md w-fit mx-auto px-2 py-3"
+          >
+          Know More <ArrowRight size={16}/>
+          </Link>
         </div>
       </div>
     </section>
