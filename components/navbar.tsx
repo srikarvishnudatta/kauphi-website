@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <header className="bg-primary p-4  text-secondary">
+    <header className="bg-primary px-4  text-secondary">
       <nav className="flex justify-between items-center">
         <ul className="hidden md:flex gap-2 flex-1 items-center">
           <li>About</li>

@@ -4,7 +4,13 @@ import "./globals.css";
 
 const myFont = localFont({
   src: "../comodo-stamp.otf",
+  variable: "--font-comodo"
 });
+
+const fontSec = localFont({
+  src: "../lovelace.otf",
+  variable:"--font-lovelace"
+})
 
 export const metadata: Metadata = {
   title: "Kauphi Toronto",
@@ -18,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${myFont.className} antialiased `}>{children}</body>
+      <body className={`${myFont.variable} ${fontSec.variable} antialiased `}>{children}</body>
     </html>
   );
 }

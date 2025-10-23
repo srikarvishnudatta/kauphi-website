@@ -1,20 +1,15 @@
 "use client";
 import { ArrowRight } from "lucide-react";
-import { motion } from "motion/react";
 export default function Hero() {
   return (
-    <motion.section
-      animate={{ opacity: 1 }}
-      className="grow-1 flex justify-center items-center"
+    <section
+      className="grow-1 bg-image flex justify-center items-center h-full"
     >
-      <div className="flex flex-col items-center justify-start gap-4 text-center">
-        <h1 className="text-4xl md:text-5xl">Taste the finest filter coffee</h1>
-        <p className="text-sm">Make your events memorable today</p>
-        <button className="bg-primary rounded-2xl text-secondary flex justify-between items-center px-2 py-3">
-          <span className="text-xs">Reserve your place</span>{" "}
-          <ArrowRight size={16} />
-        </button>
+      <div className="text-6xl md:text-7xl text-center pr-20 md:pr-10">
+        <h1 >Your</h1>
+        <h1 className="font-comodo text-primary">KAUPHI</h1>
+        <h1>awaits here</h1>
       </div>
-    </motion.section>
+    </section>
   );
 }

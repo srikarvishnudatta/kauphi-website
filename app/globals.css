@@ -3,7 +3,24 @@
 @theme {
     --color-primary: #658550;
     --color-secondary: #ede8d0;
+    --font-comodo: var(--font-comodo);
+    --font-lovelace: var(--font-lovelace);
 }
 body {
     background-color: var(--color-secondary);
+    font-family: var(--font-lovelace);
+}
+.bg-image {
+    background: url('../public/Bitmap.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: content-box;
+    padding-left: 70px;
+}
+@media (min-width: 760px) {
+    .bg-image {
+        background-size: contain;
+        padding-left: 50px;
+    }
 }
