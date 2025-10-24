@@ -1,4 +1,5 @@
 "use client";
+import useMobile from "@/hooks/useMobile";
 import { Info, Menu, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,14 +8,18 @@ import { useState } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [] = useState(false);
+  const [openDrawer, setOpenDrawer] = useState(false);
+  const isMobile = useMobile();
+  const toggleDrawer = () => setOpenDrawer(prev => !prev);
   return (
     <header
-      className="relative top-0 left-0 right-0 bg-primary px-4
-text-secondary"
+      className="relative top-0 left-0 right-0 bg-primary px-4 text-secondary"
     >
       <nav className="w-full max-w-6xl mx-auto flex justify-between items-center">
-        <ul className="hidden md:flex gap-2 flex-1 items-center">
+       {isMobile ? <div className="flex-1 relative" onClick={toggleDrawer}>
+          <Menu size={32} />
+          {openDrawer && <div className="absolute top-12 left-0 right-0 mx-auto h-52 w-full bg-black">drwaer</div>}
+        </div> :  <ul className="flex gap-2 flex-1 items-center">
           <li className="hover:text-white transition-all duration-150">
             <Link href={pathname === "/" ? "#about" : "/about"}>About</Link>
           </li>
@@ -29,10 +34,7 @@ text-secondary"
           <li className="hover:text-white transition-all duration-150">
             <Link href={"/events"}>Events</Link>
           </li>
-        </ul>
-        <div className="md:hidden flex-1">
-          <Menu size={32} />
-        </div>
+        </ul>}
         <div className=" flex items-center gap-2">
           <Link href={"/"}>
             <Image

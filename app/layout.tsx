@@ -3,16 +3,17 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import MobileContextProvider from "@/hooks/MobileProvider";
 
 const myFont = localFont({
   src: "../comodo-stamp.otf",
-  variable: "--font-comodo"
+  variable: "--font-comodo",
 });
 
 const fontSec = localFont({
   src: "../lovelace.otf",
-  variable:"--font-lovelace"
-})
+  variable: "--font-lovelace",
+});
 
 export const metadata: Metadata = {
   title: "Kauphi Toronto",
@@ -26,12 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-     
       <body className={`${myFont.variable} ${fontSec.variable} antialiased `}>
-        <Navbar />
-        {children}
-        <Footer />
-        </body>
+        <MobileContextProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </MobileContextProvider>
+      </body>
     </html>
   );
 }
