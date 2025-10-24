@@ -3,9 +3,11 @@ import { Info, Menu, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [] = useState(false);
   return (
     <header
       className="relative top-0 left-0 right-0 bg-primary px-4

@@ -1,7 +1,7 @@
 import Button from "@/components/ui/button";
 
 export default function Events() {
-  return <section className="max-w-6xl h-screen mt-20">
+  return <section className="h-screen mt-20">
     <div className="max-w-6xl mx-auto flex flex-col gap-5 items-center">
       <h1 className="font-comodo text-5xl text-primary">Toronto!</h1>
       <h2 className="text-3xl font-bold">Your</h2>
